@@ -1,1 +1,1 @@
-# github-actions-dotnet-webapp
+# Build status: [![.NET Build](https://github.com/juliadisessa/github-actions-dotnet-webapp/actions/workflows/dotnet-build.yml/badge.svg)](https://github.com/juliadisessa/github-actions-dotnet-webapp/actions/workflows/dotnet-build.yml)
