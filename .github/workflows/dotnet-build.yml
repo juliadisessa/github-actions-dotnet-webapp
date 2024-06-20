@@ -1,0 +1,29 @@
+name: .NET Build
+
+on:
+  push:
+    branches:
+      - main
+  schedule:
+    - cron: '0 * * * *'  # Executa a cada hora
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+
+    steps:
+    - name: Checkout repository
+      uses: actions/checkout@v2
+
+    - name: Setup .NET
+      uses: actions/setup-dotnet@v1
+      with:
+        dotnet-version: '8.0.x'  # Versão do .NET que você está utilizando
+
+    - name: Build project on main branch
+      if: github.ref == 'refs/heads/main'
+      run: dotnet build **/*.csproj --no-restore
+
+    - name: Build project on schedule
+      if: github.event_name == 'schedule'
+      run: dotnet build **/*.csproj --no-restore
