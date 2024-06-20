@@ -25,8 +25,8 @@ jobs:
 
     - name: Build project on main branch
       if: github.ref == 'refs/heads/main'
-      run: dotnet build ./github4women/github4women.csproj
+      run: dotnet build /github4women/github4women.csproj
 
     - name: Build project on schedule
       if: github.event_name == 'schedule'
-      run: dotnet build ./github4women/github4women.csproj
+      run: dotnet build /github4women/github4women.csproj
