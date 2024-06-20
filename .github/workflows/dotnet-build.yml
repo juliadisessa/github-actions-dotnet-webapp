@@ -21,12 +21,12 @@ jobs:
         dotnet-version: '8.0.x'  # Versão do .NET que você está utilizando
 
     - name: Restore NuGet packages
-      run: dotnet restore
+      run: dotnet restore ./github4women/github4women.csproj
 
     - name: Build project on main branch
       if: github.ref == 'refs/heads/main'
-      run: dotnet build
+      run: dotnet build ./github4women/github4women.csproj
 
     - name: Build project on schedule
       if: github.event_name == 'schedule'
-      run: dotnet build
+      run: dotnet build ./github4women/github4women.csproj
